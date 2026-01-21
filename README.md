@@ -6,5 +6,4 @@ This project is a group assignment for the course Vocabularios y esquemas semán
 - **Title:** Board Game Interaction Mechanics Vocabulary
 - **Acronym:** BGIM
 - **Namespace:** https://grupo5-vespoc.github.io/boardgame-interaction-schema#
-- **RDF:** https://grupo5-vespoc.github.io/boardgame-interaction-schema/skos.ttl
 - **Repository:** https://github.com/Grupo5-VESPOC/boardgame-interaction-schema
