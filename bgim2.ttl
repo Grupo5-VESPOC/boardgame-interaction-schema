@@ -1,0 +1,380 @@
+@prefix : <https://grupo5-vespoc.github.io/boardgame-interaction-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@base <https://grupo5-vespoc.github.io/boardgame-interaction-schema#> .
+
+<https://grupo5-vespoc.github.io/boardgame-interaction-schema#> rdf:type owl:Ontology ;
+                                                                 rdfs:comment "Ontology and SKOS vocabulary for describing board games and their interaction mechanics."@en ;
+                                                                 rdfs:label "Board Game Interaction Schema"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.w3.org/2004/02/skos/core#broader
+skos:broader rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+skos:definition rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#inScheme
+skos:inScheme rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+skos:prefLabel rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#related
+skos:related rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#scopeNote
+skos:scopeNote rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#topConceptOf
+skos:topConceptOf rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://grupo5-vespoc.github.io/boardgame-interaction-schema#hasInteractionMechanic
+:hasInteractionMechanic rdf:type owl:ObjectProperty ;
+                        rdfs:domain :BoardGame ;
+                        rdfs:range skos:Concept ;
+                        rdfs:label "has interaction mechanic"@en .
+
+
+###  https://grupo5-vespoc.github.io/boardgame-interaction-schema#hasSocialDynamic
+:hasSocialDynamic rdf:type owl:ObjectProperty ;
+                  rdfs:domain :BoardGame ;
+                  rdfs:range skos:Concept ;
+                  rdfs:label "has social dynamic"@en .
+
+
+###  https://grupo5-vespoc.github.io/boardgame-interaction-schema#isSessionOf
+:isSessionOf rdf:type owl:ObjectProperty ;
+             rdfs:domain :GameSession ;
+             rdfs:range :BoardGame ;
+             rdfs:label "is session of"@en .
+
+
+###  https://grupo5-vespoc.github.io/boardgame-interaction-schema#playedBy
+:playedBy rdf:type owl:ObjectProperty ;
+          rdfs:domain :GameSession ;
+          rdfs:range :Player ;
+          rdfs:label "played by"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://grupo5-vespoc.gihub.io/boardgame-interaction-schema/skos.ttl#OWLDataProperty_a45ea680_130d_4996_bb5b_8543a1639799
+<https://grupo5-vespoc.gihub.io/boardgame-interaction-schema/skos.ttl#OWLDataProperty_a45ea680_130d_4996_bb5b_8543a1639799> rdf:type owl:DatatypeProperty ;
+                                                                                                                            rdfs:label "designer"@es .
+
+
+###  https://grupo5-vespoc.gihub.io/boardgame-interaction-schema/skos.ttl#OWLDataProperty_b5b740e2_55fa_44e4_9605_5dd937fa2680
+<https://grupo5-vespoc.gihub.io/boardgame-interaction-schema/skos.ttl#OWLDataProperty_b5b740e2_55fa_44e4_9605_5dd937fa2680> rdf:type owl:DatatypeProperty ;
+                                                                                                                            rdfs:label "component type"@es .
+
+
+###  https://grupo5-vespoc.gihub.io/boardgame-interaction-schema/skos.ttl#OWLDataProperty_defd8174_37fd_49e1_9910_7376851e075f
+<https://grupo5-vespoc.gihub.io/boardgame-interaction-schema/skos.ttl#OWLDataProperty_defd8174_37fd_49e1_9910_7376851e075f> rdf:type owl:DatatypeProperty ;
+                                                                                                                            rdfs:label "age range"@es .
+
+
+###  https://grupo5-vespoc.gihub.io/boardgame-interaction-schema/skos.ttl#OWLDataProperty_e156bae6_2d60_4716_9747_af6966f42fd6
+<https://grupo5-vespoc.gihub.io/boardgame-interaction-schema/skos.ttl#OWLDataProperty_e156bae6_2d60_4716_9747_af6966f42fd6> rdf:type owl:DatatypeProperty ;
+                                                                                                                            rdfs:label "year published"@es .
+
+
+###  https://grupo5-vespoc.github.io/boardgame-interaction-schema#averageDuration
+:averageDuration rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :BoardGame ;
+                 rdfs:range xsd:integer ;
+                 rdfs:label "average duration (minutes)"@en .
+
+
+###  https://grupo5-vespoc.github.io/boardgame-interaction-schema#gameTitle
+:gameTitle rdf:type owl:DatatypeProperty ;
+           rdfs:domain :BoardGame ;
+           rdfs:range xsd:string ;
+           rdfs:label "game title"@en .
+
+
+###  https://grupo5-vespoc.github.io/boardgame-interaction-schema#numberOfPlayers
+:numberOfPlayers rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :BoardGame ;
+                 rdfs:range xsd:integer ;
+                 rdfs:label "number of players"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.w3.org/2004/02/skos/core#Concept
+skos:Concept rdf:type owl:Class .
+
+
+###  http://www.w3.org/2004/02/skos/core#ConceptScheme
+skos:ConceptScheme rdf:type owl:Class .
+
+
+###  https://grupo5-vespoc.github.io/boardgame-interaction-schema#BoardGame
+:BoardGame rdf:type owl:Class ;
+           rdfs:label "Board Game"@en .
+
+
+###  https://grupo5-vespoc.github.io/boardgame-interaction-schema#GameSession
+:GameSession rdf:type owl:Class ;
+             rdfs:label "Game Session"@en .
+
+
+###  https://grupo5-vespoc.github.io/boardgame-interaction-schema#InteractionMechanic
+:InteractionMechanic rdf:type owl:Class ;
+                     rdfs:comment "Abstract class representing an interaction mechanic category."@en ;
+                     rdfs:label "Interaction Mechanic"@en .
+
+
+###  https://grupo5-vespoc.github.io/boardgame-interaction-schema#Player
+:Player rdf:type owl:Class ;
+        rdfs:label "Player"@en .
+
+
+###  https://grupo5-vespoc.github.io/boardgame-interaction-schema#SocialDynamic
+:SocialDynamic rdf:type owl:Class ;
+               rdfs:comment "Abstract class representing a social dynamic emerging from play."@en ;
+               rdfs:label "Social Dynamic"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://grupo5-vespoc.gihub.io/boardgame-interaction-schema/skos.ttl#OWLNamedIndividual_662b04d9_32c3_4339_b3c2_e59c26c9ac91
+<https://grupo5-vespoc.gihub.io/boardgame-interaction-schema/skos.ttl#OWLNamedIndividual_662b04d9_32c3_4339_b3c2_e59c26c9ac91> rdf:type owl:NamedIndividual ,
+                                                                                                                                        :BoardGame ;
+                                                                                                                               :hasInteractionMechanic :Drafting ,
+                                                                                                                                                       :IndirectCompetition ;
+                                                                                                                               <https://grupo5-vespoc.gihub.io/boardgame-interaction-schema/skos.ttl#OWLDataProperty_a45ea680_130d_4996_bb5b_8543a1639799> "Kalus Teuber" ;
+                                                                                                                               <https://grupo5-vespoc.gihub.io/boardgame-interaction-schema/skos.ttl#OWLDataProperty_b5b740e2_55fa_44e4_9605_5dd937fa2680> "Tablero modular, cartas, fichas" ;
+                                                                                                                               <https://grupo5-vespoc.gihub.io/boardgame-interaction-schema/skos.ttl#OWLDataProperty_defd8174_37fd_49e1_9910_7376851e075f> "10+" ;
+                                                                                                                               <https://grupo5-vespoc.gihub.io/boardgame-interaction-schema/skos.ttl#OWLDataProperty_e156bae6_2d60_4716_9747_af6966f42fd6> "1995" ;
+                                                                                                                               :averageDuration "60-90" ;
+                                                                                                                               :gameTitle "Catan" ;
+                                                                                                                               :numberOfPlayers "3-4" ;
+                                                                                                                               rdfs:label "Catan"@es .
+
+
+###  https://grupo5-vespoc.github.io/boardgame-interaction-schema#ActionPoints
+:ActionPoints rdf:type owl:NamedIndividual ,
+                       skos:Concept ;
+              skos:broader :ActionSelection ;
+              skos:definition "Sistema en el que los jugadores disponen de un número limitado de puntos para realizar acciones."@es ;
+              skos:inScheme :BoardGameInteractionMechanics ;
+              skos:prefLabel "Action Points"@en ,
+                             "Puntos de acción"@es .
+
+
+###  https://grupo5-vespoc.github.io/boardgame-interaction-schema#ActionSelection
+:ActionSelection rdf:type owl:NamedIndividual ,
+                          skos:Concept ;
+                 skos:broader :SocialInteraction ;
+                 skos:definition "Mecánicas que determinan cómo los jugadores eligen y ejecutan sus acciones."@es ;
+                 skos:inScheme :BoardGameInteractionMechanics ;
+                 skos:prefLabel "Action Selection"@en ,
+                                "Selección de acciones"@es .
+
+
+###  https://grupo5-vespoc.github.io/boardgame-interaction-schema#AreaControl
+:AreaControl rdf:type owl:NamedIndividual ,
+                      skos:Concept ;
+             skos:broader :BoardControl ;
+             skos:definition "Mecánica en la que los jugadores compiten por controlar regiones del tablero."@es ;
+             skos:inScheme :BoardGameInteractionMechanics ;
+             skos:prefLabel "Area Control"@en ,
+                            "Control de área"@es .
+
+
+###  https://grupo5-vespoc.github.io/boardgame-interaction-schema#BoardControl
+:BoardControl rdf:type owl:NamedIndividual ,
+                       skos:Concept ;
+              skos:broader :SocialInteraction ;
+              skos:definition "Mecánicas basadas en la ocupación y dominio de espacios en el tablero."@es ;
+              skos:inScheme :BoardGameInteractionMechanics ;
+              skos:prefLabel "Board Control"@en ,
+                             "Control de tablero"@es .
+
+
+###  https://grupo5-vespoc.github.io/boardgame-interaction-schema#BoardGameInteractionMechanics
+:BoardGameInteractionMechanics rdf:type owl:NamedIndividual ,
+                                        skos:ConceptScheme ;
+                               skos:definition "Vocabulario controlado para describir mecánicas de interacción social en juegos de mesa modernos."@es ;
+                               skos:prefLabel "Board Game Interaction Mechanics"@en ,
+                                              "Mecánicas de Interacción en Juegos de Mesa"@es .
+
+
+###  https://grupo5-vespoc.github.io/boardgame-interaction-schema#CompetitiveInteraction
+:CompetitiveInteraction rdf:type owl:NamedIndividual ,
+                                 skos:Concept ;
+                        skos:broader :SocialInteraction ;
+                        skos:definition "Dinámica social en la que los jugadores compiten entre sí para alcanzar la victoria."@es ;
+                        skos:inScheme :BoardGameInteractionMechanics ;
+                        skos:prefLabel "Competitive Interaction"@en ,
+                                       "Interacción competitiva"@es .
+
+
+###  https://grupo5-vespoc.github.io/boardgame-interaction-schema#CompleteCooperation
+:CompleteCooperation rdf:type owl:NamedIndividual ,
+                              skos:Concept ;
+                     skos:broader :CooperativeInteraction ;
+                     skos:definition "Forma de cooperación en la que todos los jugadores comparten completamente objetivos, recursos e información."@es ;
+                     skos:inScheme :BoardGameInteractionMechanics ;
+                     skos:prefLabel "Complete Cooperation"@en ,
+                                    "Cooperación completa"@es ;
+                     skos:scopeNote "Típica de juegos totalmente cooperativos como Pandemic."@es .
+
+
+###  https://grupo5-vespoc.github.io/boardgame-interaction-schema#CooperativeInteraction
+:CooperativeInteraction rdf:type owl:NamedIndividual ,
+                                 skos:Concept ;
+                        skos:broader :SocialInteraction ;
+                        skos:definition "Dinámica social donde los jugadores coordinan sus acciones para alcanzar un objetivo común."@es ;
+                        skos:inScheme :BoardGameInteractionMechanics ;
+                        skos:prefLabel "Cooperative Interaction"@en ,
+                                       "Interacción cooperativa"@es ;
+                        skos:related :IndirectCompetition ;
+                        skos:scopeNote "Aplicable en juegos en los que el éxito o fracaso afecta al conjunto de los jugadores, independientemente de la contribución individual."@es .
+
+
+###  https://grupo5-vespoc.github.io/boardgame-interaction-schema#DirectCompetition
+:DirectCompetition rdf:type owl:NamedIndividual ,
+                            skos:Concept ;
+                   skos:broader :CompetitiveInteraction ;
+                   skos:definition "Competición en la que las acciones de un jugador afectan directamente a los demás."@es ;
+                   skos:inScheme :BoardGameInteractionMechanics ;
+                   skos:prefLabel "Competición directa"@es ,
+                                  "Direct Competition"@en ;
+                   skos:scopeNote "Incluye ataques, bloqueos o eliminación directa de recursos."@es .
+
+
+###  https://grupo5-vespoc.github.io/boardgame-interaction-schema#Drafting
+:Drafting rdf:type owl:NamedIndividual ,
+                   skos:Concept ;
+          skos:broader :ActionSelection ;
+          skos:definition "Mecánica en la que los jugadores seleccionan elementos de un conjunto compartido de forma alternada."@es ;
+          skos:inScheme :BoardGameInteractionMechanics ;
+          skos:prefLabel "Drafting"@en ,
+                         "Drafting"@es .
+
+
+###  https://grupo5-vespoc.github.io/boardgame-interaction-schema#EngineBuilding
+:EngineBuilding rdf:type owl:NamedIndividual ,
+                         skos:Concept ;
+                skos:broader :ResourceManagement ;
+                skos:definition "Mecánica en la que los jugadores crean sistemas que producen recursos o ventajas de forma creciente."@es ;
+                skos:inScheme :BoardGameInteractionMechanics ;
+                skos:prefLabel "Construcción de motores"@es ,
+                               "Engine Building"@en ;
+                skos:scopeNote "El rendimiento del jugador aumenta progresivamente durante la partida."@es .
+
+
+###  https://grupo5-vespoc.github.io/boardgame-interaction-schema#HandManagement
+:HandManagement rdf:type owl:NamedIndividual ,
+                         skos:Concept ;
+                skos:broader :ResourceManagement ;
+                skos:definition "Mecánica centrada en la gestión óptima de las cartas u otros elementos en la mano del jugador."@es ;
+                skos:inScheme :BoardGameInteractionMechanics ;
+                skos:prefLabel "Gestión de mano"@es ,
+                               "Hand Management"@en .
+
+
+###  https://grupo5-vespoc.github.io/boardgame-interaction-schema#HiddenBetrayal
+:HiddenBetrayal rdf:type owl:NamedIndividual ,
+                         skos:Concept ;
+                skos:broader :SocialInteraction ;
+                skos:definition "Mecánica en la que uno o más jugadores ocultan su verdadera lealtad o intenciones."@es ;
+                skos:inScheme :BoardGameInteractionMechanics ;
+                skos:prefLabel "Hidden Betrayal"@en ,
+                               "Traición oculta"@es ;
+                skos:related :PartialCooperation ;
+                skos:scopeNote "Característica de juegos con roles ocultos como Secret Hitler o The Resistance."@es .
+
+
+###  https://grupo5-vespoc.github.io/boardgame-interaction-schema#IndirectCompetition
+:IndirectCompetition rdf:type owl:NamedIndividual ,
+                              skos:Concept ;
+                     skos:broader :CompetitiveInteraction ;
+                     skos:definition "Competición en la que los jugadores compiten por recursos o posiciones sin atacarse directamente."@es ;
+                     skos:inScheme :BoardGameInteractionMechanics ;
+                     skos:prefLabel "Competición indirecta"@es ,
+                                    "Indirect Competition"@en ;
+                     skos:related :CooperativeInteraction ;
+                     skos:scopeNote "Muy común en juegos eurogame."@es .
+
+
+###  https://grupo5-vespoc.github.io/boardgame-interaction-schema#MajorityInfluence
+:MajorityInfluence rdf:type owl:NamedIndividual ,
+                            skos:Concept ;
+                   skos:broader :BoardControl ;
+                   skos:definition "Sistema de puntuación basado en quién tiene mayor presencia o influencia en una zona."@es ;
+                   skos:inScheme :BoardGameInteractionMechanics ;
+                   skos:prefLabel "Majority Influence"@en ,
+                                  "Mayorías"@es .
+
+
+###  https://grupo5-vespoc.github.io/boardgame-interaction-schema#PartialCooperation
+:PartialCooperation rdf:type owl:NamedIndividual ,
+                             skos:Concept ;
+                    skos:broader :CooperativeInteraction ;
+                    skos:definition "Forma de cooperación en la que los jugadores cooperan en algunos aspectos pero mantienen objetivos individuales."@es ;
+                    skos:inScheme :BoardGameInteractionMechanics ;
+                    skos:prefLabel "Cooperación parcial"@es ,
+                                   "Partial Cooperation"@en ;
+                    skos:related :HiddenBetrayal ;
+                    skos:scopeNote "Frecuente en juegos con objetivos compartidos y recompensas individuales."@es .
+
+
+###  https://grupo5-vespoc.github.io/boardgame-interaction-schema#ResourceManagement
+:ResourceManagement rdf:type owl:NamedIndividual ,
+                             skos:Concept ;
+                    skos:broader :SocialInteraction ;
+                    skos:definition "Conjunto de mecánicas centradas en la optimización y administración de recursos del jugador."@es ;
+                    skos:inScheme :BoardGameInteractionMechanics ;
+                    skos:prefLabel "Gestión de recursos"@es ,
+                                   "Resource Management"@en .
+
+
+###  https://grupo5-vespoc.github.io/boardgame-interaction-schema#SocialInteraction
+:SocialInteraction rdf:type owl:NamedIndividual ,
+                            skos:Concept ;
+                   skos:definition "Categoría general de dinámicas sociales que estructuran cómo los jugadores interactúan entre sí."@es ;
+                   skos:inScheme :BoardGameInteractionMechanics ;
+                   skos:prefLabel "Interacción social"@es ,
+                                  "Social Interaction"@en ;
+                   skos:topConceptOf :BoardGameInteractionMechanics .
+
+
+###  https://grupo5-vespoc.github.io/boardgame-interaction-schema#WorkerPlacement
+:WorkerPlacement rdf:type owl:NamedIndividual ,
+                          skos:Concept ;
+                 skos:broader :ActionSelection ;
+                 skos:definition "Mecánica en la que los jugadores colocan trabajadores en espacios de acción para obtener beneficios."@es ;
+                 skos:inScheme :BoardGameInteractionMechanics ;
+                 skos:prefLabel "Colocación de trabajadores"@es ,
+                                "Worker Placement"@en .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
